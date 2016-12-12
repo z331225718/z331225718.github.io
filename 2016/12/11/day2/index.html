@@ -94,7 +94,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
 <meta property="og:description" content="复制控件复制控件时若控件属性不完全一样，要将原链接去掉
 定义Array12var operandStack = Array&amp;lt;Double&amp;gt;()//定义的时候可以不指明类型，让编译器自己推断
 Computed PropertiesSwift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：123456789var displayValue: Double&amp;#1">
-<meta property="og:updated_time" content="2016-12-12T14:40:10.000Z">
+<meta property="og:updated_time" content="2016-12-12T14:44:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios入门--calculator（二）">
 <meta name="twitter:description" content="复制控件复制控件时若控件属性不完全一样，要将原链接去掉
@@ -326,7 +326,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
 <p>此函数的参数是一个函数，它有两个double型参量，返回值是一个double型，调用此函数：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation(multiply)</div></pre></td></tr></table></figure></p>
 <p>此时还要定义加减乘除四个函数，比较繁琐，swift中允许传递一个函数而不用去定义它：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation &#123;$<span class="number">0</span> * $<span class="number">1</span>&#125;</div></pre></td></tr></table></figure></p>
 <p>这里将函数作为参数传递，$0,$1指的是第一第二个参数。</p>
-<p>##MVC<br>MVC指的是Model，Controller，View。<br>Model（模型）是应用程序中用于处理应用程序数据逻辑的部分。通常模型对象负责在数据库中存取数据。<br>View（视图）是应用程序中处理数据显示的部分。通常视图是依据模型数据创建的。<br>Controller（控制器）是应用程序中处理用户交互的部分。通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>MVC指的是Model，Controller，View。<br>Model（模型）是应用程序中用于处理应用程序数据逻辑的部分。通常模型对象负责在数据库中存取数据。<br>View（视图）是应用程序中处理数据显示的部分。通常视图是依据模型数据创建的。<br>Controller（控制器）是应用程序中处理用户交互的部分。通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
 
       
     </div>
@@ -482,7 +482,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复制控件"><span class="nav-number">1.</span> <span class="nav-text">复制控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义Array"><span class="nav-number">2.</span> <span class="nav-text">定义Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-Properties"><span class="nav-number">3.</span> <span class="nav-text">Computed Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码复用"><span class="nav-number">4.</span> <span class="nav-text">代码复用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复制控件"><span class="nav-number">1.</span> <span class="nav-text">复制控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义Array"><span class="nav-number">2.</span> <span class="nav-text">定义Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-Properties"><span class="nav-number">3.</span> <span class="nav-text">Computed Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码复用"><span class="nav-number">4.</span> <span class="nav-text">代码复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">5.</span> <span class="nav-text">MVC</span></a></li></ol></div>
             
 
           </div>
