@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,8 +97,8 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"always"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -160,7 +160,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">一个做天线的编程之路</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -209,9 +209,45 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -314,17 +350,20 @@
       
         
           
-            <ol>
-<li>Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;等。</li>
-<li>Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。</li>
-</ol>
-<hr>
-<h2 id="定义一个class"><a href="#定义一个class" class="headerlink" title="定义一个class"></a>定义一个class</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span></span></div></pre></td></tr></table></figure>
-<h2 id="定义property-variable-constant"><a href="#定义property-variable-constant" class="headerlink" title="定义property,variable,constant"></a>定义property,variable,constant</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> property</div><div class="line"><span class="keyword">var</span> variable</div><div class="line"><span class="keyword">let</span> constant</div></pre></td></tr></table></figure>
-<h2 id="定义一个function"><a href="#定义一个function" class="headerlink" title="定义一个function"></a>定义一个function</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">appendDigit</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span></div></pre></td></tr></table></figure>
-<h2 id="optional类型"><a href="#optional类型" class="headerlink" title="optional类型"></a>optional类型</h2><p>Optional类型只有两个值，一个是not set（nil）；另一个是有值。将有值的optional类型解包用’!’</p>
-
           
+Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;等。
+Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。
+
+
+定义一个class1class ViewCon
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/11/day1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -439,18 +478,17 @@
       
         
           
-            <h2 id="复制控件"><a href="#复制控件" class="headerlink" title="复制控件"></a>复制控件</h2><p>复制控件时若控件属性不完全一样，要将原链接去掉</p>
-<h2 id="定义Array"><a href="#定义Array" class="headerlink" title="定义Array"></a>定义Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> operandStack = <span class="type">Array</span>&lt;<span class="type">Double</span>&gt;()</div><div class="line"><span class="comment">//定义的时候可以不指明类型，让编译器自己推断</span></div></pre></td></tr></table></figure>
-<h2 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h2><p>Swift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> displayValue: <span class="type">Double</span>&#123;</div><div class="line">    <span class="keyword">get</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">NumberFormatter</span>().number(from: display.text!)!.doubleValue</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">set</span>&#123;</div><div class="line">        display.text = <span class="string">"<span class="subst">\(newValue)</span>"</span></div><div class="line">        userIsInTheMiddleOfTypingANumber = <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>将静态标签上显示的string转换成Double，再set回string</p>
-<h2 id="代码复用"><a href="#代码复用" class="headerlink" title="代码复用"></a>代码复用</h2><p>每一段加减乘除代码都很类似：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> operandStack.<span class="built_in">count</span>&gt;=<span class="number">2</span>&#123;</div><div class="line">    displayValue = operandStack.removeLast()+operandStack.removeLast()</div><div class="line">    enter()</div></pre></td></tr></table></figure></p>
-<p>可以将这段写成如下函数<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">performOperation</span> <span class="params">(operation: <span class="params">(Double,Double)</span></span></span> -&gt; <span class="type">Double</span>)&#123;</div><div class="line">       <span class="keyword">if</span> operandStack.<span class="built_in">count</span>&gt;=<span class="number">2</span>&#123;</div><div class="line">           displayValue = operation(operandStack.removeLast(),operandStack.removeLast())</div><div class="line">           enter()</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>此函数的参数是一个函数，它有两个double型参量，返回值是一个double型，调用此函数：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation(multiply)</div></pre></td></tr></table></figure></p>
-<p>此时还要定义加减乘除四个函数，比较繁琐，swift中允许传递一个函数而不用去定义它：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation &#123;$<span class="number">0</span> * $<span class="number">1</span>&#125;</div></pre></td></tr></table></figure></p>
-<p>这里将函数作为参数传递，$0,$1指的是第一第二个参数。</p>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>MVC指的是Model，Controller，View。<br>Model（模型）是应用程序中用于处理应用程序数据逻辑的部分。通常模型对象负责在数据库中存取数据。<br>View（视图）是应用程序中处理数据显示的部分。通常视图是依据模型数据创建的。<br>Controller（控制器）是应用程序中处理用户交互的部分。通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
-
-          
+          复制控件复制控件时若控件属性不完全一样，要将原链接去掉
+定义Array12var operandStack = Array&lt;Double&gt;()//定义的时候可以不指明类型，让编译器自己推断
+Computed PropertiesSwift中的计算属性（get and set）目的在于取值
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/11/day2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -584,7 +622,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Mist
   </a>
 </div>
 
@@ -684,6 +722,19 @@
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
 </body>
