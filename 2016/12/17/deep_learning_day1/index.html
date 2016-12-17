@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -99,8 +99,11 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
 
 Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Data)-&amp;gt;Pick the “best” function f—-TrainingUsing f —-testing">
 <meta property="og:image" content="https://github.com/z331225718/markdown-pic/blob/master/machinelearning1.png?raw=true">
+<meta property="og:image" content="http://latex.codecogs.com/svg.latex? \sigma(z)=\frac{1}{1+e^{-z}}">
+<meta property="og:image" content="http://latex.codecogs.com/svg.latex? \textstyle\theta">
+<meta property="og:image" content="http://latex.codecogs.com/svg.latex? \textstyle\theta">
 <meta property="og:image" content="https://github.com/z331225718/markdown-pic/blob/master/machinelearning2.png?raw=true">
-<meta property="og:updated_time" content="2016-12-17T04:32:10.000Z">
+<meta property="og:updated_time" content="2016-12-17T07:52:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="machine learning">
 <meta name="twitter:description" content="Machine Learning≈ Looking for a Function.
@@ -142,7 +145,7 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
 
 
 
-  <title> machine learning | zzm blog </title>
+  <title> machine learning | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +166,7 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -362,7 +365,9 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
       
 
       
-        <ol>
+        <p><head></head></p>
+<p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><br></script><br></p>
+<ol>
 <li><p>Machine Learning≈ Looking for a Function.</p>
 </li>
 <li><p>常见的机器学习有语音识别，图像识别等</p>
@@ -371,12 +376,13 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
 </li>
 <li><p>神经元：<br>z=a<sub>1</sub>w<sub>1</sub>+······+a<sub>k</sub>w<sub>k</sub>+b<br>z经过Activation Function又将作为下一个元中的a，如图：<br><img src="https://github.com/z331225718/markdown-pic/blob/master/machinelearning1.png?raw=true" alt="zzm"></p>
 </li>
-<li><p>Activation Function<br>Sigmoid Function：</p>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">$$&sigma(z)=\frac{1}{1+e<sup>-z</sup>}$$</script>
+<li><p>Activation Function<br>Sigmoid Function：<br><img src="http://latex.codecogs.com/svg.latex? \sigma(z)=\frac{1}{1+e^{-z}}"></p>
 </li>
-<li><p>不同连接构成里不同的网络结构，每一个神经元都有不同的权值和偏置，权值和偏置被称为network parameters &amp;theta</p>
+<li><p>不同连接构成里不同的网络结构，每一个神经元都有不同的权值和偏置，权值和偏置被称为network parameters <img src="http://latex.codecogs.com/svg.latex? \textstyle\theta"></p>
 </li>
-<li><p>给定一个parameters &amp;theta 指定一个function，给定一个网络结构指定一个function set</p>
+</ol>
+<ol>
+<li><p>给定一个parameters <img src="http://latex.codecogs.com/svg.latex? \textstyle\theta"> 指定一个function，给定一个网络结构指定一个function set</p>
 </li>
 <li><p>网络包含： Input Layer-&gt;Hidden Layer-&gt;Output Layer.<br>深度学习指的是有很多的Hidden Layer</p>
 </li>
@@ -652,6 +658,28 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
@@ -669,7 +697,7 @@ Framework：A set of function(Model)-&amp;gt;Goodness of function f(Training Dat
   <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-  <script src="/js/src/algolia-search.js?v=5.1.0"></script>
+  <script src="/js/src/algolia-search.js?v=5.1.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
