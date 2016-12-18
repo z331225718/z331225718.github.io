@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ios,calculator," />
+  <meta name="keywords" content="ios," />
 
 
 
@@ -84,31 +84,16 @@
 
 
 
-<meta name="description" content="Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;amp;等。
-Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。
-
-
-定义一个class1class ViewController: UIViewController
-定义property,variable,cons">
+<meta name="description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios入门--calculator（一）">
-<meta property="og:url" content="http://yoursite.com/2016/12/11/day1/index.html">
+<meta property="og:title" content="ios入门--calculator（四）">
+<meta property="og:url" content="http://yoursite.com/2016/12/18/swift_day4/index.html">
 <meta property="og:site_name" content="zzm blog">
-<meta property="og:description" content="Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;amp;等。
-Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。
-
-
-定义一个class1class ViewController: UIViewController
-定义property,variable,cons">
-<meta property="og:updated_time" content="2016-12-12T15:32:39.000Z">
+<meta property="og:description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
+<meta property="og:updated_time" content="2016-12-18T07:01:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios入门--calculator（一）">
-<meta name="twitter:description" content="Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;amp;等。
-Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。
-
-
-定义一个class1class ViewController: UIViewController
-定义property,variable,cons">
+<meta name="twitter:title" content="ios入门--calculator（四）">
+<meta name="twitter:description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
 
 
 
@@ -136,13 +121,13 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/11/day1/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/18/swift_day4/"/>
 
 
 
 
 
-  <title> ios入门--calculator（一） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> ios入门--calculator（四） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +274,7 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/11/day1/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/18/swift_day4/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="zhu.ming.zhou">
@@ -313,7 +298,7 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
             
             
               
-                ios入门--calculator（一）
+                ios入门--calculator（四）
               
             
           </h1>
@@ -326,8 +311,8 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-11T23:46:25+08:00">
-                2016-12-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T14:30:20+08:00">
+                2016-12-18
               </time>
             
 
@@ -362,15 +347,38 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
       
 
       
-        <ol>
-<li>Swift里所有的对象都在堆中，Swift已经替你进行里内存管理，所有定义的property，variable等都是一个指针，因为对象只存在于堆中，不需要多余的@&amp;等。</li>
-<li>Swift中所有变量必须规定一个类型，但是Swift有类型推导特性。</li>
+        <h2 id="optional-is-just-an-enum"><a href="#optional-is-just-an-enum" class="headerlink" title="optional is just an enum"></a>optional is just an enum</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Optional</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">None</span></div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="type">T</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = <span class="literal">nil</span></div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.<span class="type">None</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = <span class="string">"hello"</span></div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.<span class="type">Some</span>(<span class="string">"hello"</span>)</div></pre></td></tr></table></figure>
+<p>解包过程其实是一个switch：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> y = x!</div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">switch</span> x &#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="keyword">let</span> value): y = value</div><div class="line">  <span class="keyword">case</span> <span class="keyword">none</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a = Array&lt;String&gt;()</div><div class="line">//is the same as</div><div class="line">var a = [String]()</div><div class="line"></div><div class="line">let animals = ["Giraffe","Cow"]</div><div class="line">// let声明的都是常量，无法改变</div><div class="line"></div><div class="line">for animal in animals&#123;</div><div class="line">  print("\(animal)"")</div><div class="line">&#125; // 访问Array</div></pre></td></tr></table></figure>
+<h2 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pac10teamRankings = dictionary&lt;<span class="type">String</span>, <span class="type">Int</span>&gt;()</div><div class="line"><span class="comment">//is the same as</span></div><div class="line"><span class="keyword">var</span> pac10teamRankings = [<span class="type">String</span>:<span class="type">Int</span>]()</div><div class="line">pac10teamRankings = [<span class="string">"Stanford"</span>:<span class="number">1</span>,<span class="string">"CUC"</span>:<span class="number">2</span>]</div><div class="line"><span class="keyword">let</span> ranking = pac10teamRankings[<span class="string">"Ohio"</span>] <span class="comment">// ranking would be nil</span></div><div class="line"></div><div class="line"><span class="comment">// use a tuple with for enumerate a dictionary</span></div><div class="line"> <span class="keyword">for</span> (key,value) <span class="keyword">in</span> pac10teamRankings&#123;</div><div class="line">   <span class="built_in">print</span>(<span class="string">"<span class="subst">\(key)</span> = <span class="subst">\(value)</span>"</span>)</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line">  <span class="keyword">var</span> startIndex: <span class="type">T</span></div><div class="line">  <span class="keyword">var</span> endIndex: <span class="type">T</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> array = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>]</div><div class="line"><span class="keyword">let</span> subArray1 = array[<span class="number">2</span>...<span class="number">3</span>]<span class="comment">//["c","d"]</span></div><div class="line"><span class="keyword">let</span> subArray2 = array[<span class="number">2</span>..&lt;<span class="number">3</span>]<span class="comment">//["c"]</span></div></pre></td></tr></table></figure>
+<h2 id="Other-Class"><a href="#Other-Class" class="headerlink" title="Other Class"></a>Other Class</h2><ol>
+<li>NSObject: It is base class for all Objective-C classes</li>
+<li>NSNumber: 装数字的类，可用来强制类型转换</li>
+<li>NSDate：用来找出现在的日期和时间或者储存过去或者未来的日期</li>
+<li>NSDATA：处理原始数据</li>
 </ol>
-<hr>
-<h2 id="定义一个class"><a href="#定义一个class" class="headerlink" title="定义一个class"></a>定义一个class</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span></span></div></pre></td></tr></table></figure>
-<h2 id="定义property-variable-constant"><a href="#定义property-variable-constant" class="headerlink" title="定义property,variable,constant"></a>定义property,variable,constant</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> property</div><div class="line"><span class="keyword">var</span> variable</div><div class="line"><span class="keyword">let</span> constant</div></pre></td></tr></table></figure>
-<h2 id="定义一个function"><a href="#定义一个function" class="headerlink" title="定义一个function"></a>定义一个function</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">appendDigit</span><span class="params">(<span class="number">_</span> sender: UIButton)</span></span></div></pre></td></tr></table></figure>
-<h2 id="optional类型"><a href="#optional类型" class="headerlink" title="optional类型"></a>optional类型</h2><p>Optional类型只有两个值，一个是not set（nil）；另一个是有值。将有值的optional类型解包用’!’</p>
+<h1 id="Swift中的数据结构"><a href="#Swift中的数据结构" class="headerlink" title="Swift中的数据结构"></a>Swift中的数据结构</h1><p>swift中有三种数据结构：class, struct and enum</p>
+<p>相似点：</p>
+<ol>
+<li>声明的形式</li>
+<li>属性和方法</li>
+<li>class和struct初始化相似</li>
+</ol>
+<p>不同点：</p>
+<ol>
+<li>class是三种唯一有继承性的</li>
+<li>introspection and casting also class only</li>
+<li>值类型和引用类型。struct和enum储存的是拷贝过的值，而class是引用类型，传递的是对象的指针，值一直在堆内存中，堆内存中的值系统会自动管理</li>
+</ol>
+<h2 id="value-vs-Reference"><a href="#value-vs-Reference" class="headerlink" title="value vs Reference"></a>value vs Reference</h2><ol>
+<li>value值在struct和enum中当你将它传递给方法时，方法使用的是它的拷贝，当你赋值给他时也是一样。所以在定义struct和enum时，如果添加方法修改它的状态，必须在方法前面加上mutating关键词</li>
+<li>Reference储存在堆中，即使是常量指针，同样可以向这个常量指针发送消息，来修改对象里的属性</li>
+</ol>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
+<li>可以加override来重写父类方法</li>
+<li>用final来标记不可重写的func</li>
+</ol>
 
       
     </div>
@@ -396,8 +404,6 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
           
             <a href="/tags/ios/" rel="tag"># ios</a>
           
-            <a href="/tags/calculator/" rel="tag"># calculator</a>
-          
         </div>
       
 
@@ -405,15 +411,15 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/12/17/deep_learning_day1/" rel="next" title="machine learning">
+                <i class="fa fa-chevron-left"></i> machine learning
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/12/day2/" rel="prev" title="ios入门--calculator（二）">
-                ios入门--calculator（二） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +532,7 @@ Swift中所有变量必须规定一个类型，但是Swift有类型推导特性�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个class"><span class="nav-number">1.</span> <span class="nav-text">定义一个class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义property-variable-constant"><span class="nav-number">2.</span> <span class="nav-text">定义property,variable,constant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个function"><span class="nav-number">3.</span> <span class="nav-text">定义一个function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optional类型"><span class="nav-number">4.</span> <span class="nav-text">optional类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#optional-is-just-an-enum"><span class="nav-number">1.</span> <span class="nav-text">optional is just an enum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">2.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dictionary"><span class="nav-number">3.</span> <span class="nav-text">dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range"><span class="nav-number">4.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Class"><span class="nav-number">5.</span> <span class="nav-text">Other Class</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift中的数据结构"><span class="nav-number"></span> <span class="nav-text">Swift中的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#value-vs-Reference"><span class="nav-number">1.</span> <span class="nav-text">value vs Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li></ol></div>
             
 
           </div>
