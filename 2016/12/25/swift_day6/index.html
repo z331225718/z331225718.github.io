@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
+<meta name="description" content="FunctionsString methods
+In Unicode, a given glyph might be represented by multiple Unicode characters, As a result, we can’t index a String by int
+1234567var s = &quot;hello&quot;let index = advance(s.startInde">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios入门--calculator（四）">
-<meta property="og:url" content="http://yoursite.com/2016/12/18/swift_day4/index.html">
+<meta property="og:title" content="ios入门--calculator（六）">
+<meta property="og:url" content="http://yoursite.com/2016/12/25/swift_day6/index.html">
 <meta property="og:site_name" content="zzm blog">
-<meta property="og:description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
-<meta property="og:updated_time" content="2016-12-18T07:09:33.000Z">
+<meta property="og:description" content="FunctionsString methods
+In Unicode, a given glyph might be represented by multiple Unicode characters, As a result, we can’t index a String by int
+1234567var s = &quot;hello&quot;let index = advance(s.startInde">
+<meta property="og:updated_time" content="2016-12-25T07:07:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios入门--calculator（四）">
-<meta name="twitter:description" content="optional is just an enum123456789101112enum Optional&amp;lt;T&amp;gt; &amp;#123;  case None  case Some(T)&amp;#125;let x: String? = nilislet x = Optional&amp;lt;String&amp;gt;.Nonelet x: String? = &quot;hello&quot;islet x = Optional&amp;l">
+<meta name="twitter:title" content="ios入门--calculator（六）">
+<meta name="twitter:description" content="FunctionsString methods
+In Unicode, a given glyph might be represented by multiple Unicode characters, As a result, we can’t index a String by int
+1234567var s = &quot;hello&quot;let index = advance(s.startInde">
 
 
 
@@ -121,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/18/swift_day4/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/25/swift_day6/"/>
 
 
 
 
 
-  <title> ios入门--calculator（四） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> ios入门--calculator（六） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +280,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/18/swift_day4/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/25/swift_day6/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="zhu.ming.zhou">
@@ -298,7 +304,7 @@
             
             
               
-                ios入门--calculator（四）
+                ios入门--calculator（六）
               
             
           </h1>
@@ -311,8 +317,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-18T14:30:20+08:00">
-                2016-12-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-25T14:30:20+08:00">
+                2016-12-25
               </time>
             
 
@@ -347,38 +353,19 @@
       
 
       
-        <h2 id="optional-is-just-an-enum"><a href="#optional-is-just-an-enum" class="headerlink" title="optional is just an enum"></a>optional is just an enum</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Optional</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">None</span></div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="type">T</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = <span class="literal">nil</span></div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.<span class="type">None</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = <span class="string">"hello"</span></div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.<span class="type">Some</span>(<span class="string">"hello"</span>)</div></pre></td></tr></table></figure>
-<p>解包过程其实是一个switch：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> y = x!</div><div class="line"><span class="keyword">is</span></div><div class="line"><span class="keyword">switch</span> x &#123;</div><div class="line">  <span class="keyword">case</span> <span class="type">Some</span>(<span class="keyword">let</span> value): y = value</div><div class="line">  <span class="keyword">case</span> <span class="keyword">none</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var a = Array&lt;String&gt;()</div><div class="line">//is the same as</div><div class="line">var a = [String]()</div><div class="line"></div><div class="line">let animals = ["Giraffe","Cow"]</div><div class="line">// let声明的都是常量，无法改变</div><div class="line"></div><div class="line">for animal in animals&#123;</div><div class="line">  print("\(animal)"")</div><div class="line">&#125; // 访问Array</div></pre></td></tr></table></figure>
-<h2 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> pac10teamRankings = dictionary&lt;<span class="type">String</span>, <span class="type">Int</span>&gt;()</div><div class="line"><span class="comment">//is the same as</span></div><div class="line"><span class="keyword">var</span> pac10teamRankings = [<span class="type">String</span>:<span class="type">Int</span>]()</div><div class="line">pac10teamRankings = [<span class="string">"Stanford"</span>:<span class="number">1</span>,<span class="string">"CUC"</span>:<span class="number">2</span>]</div><div class="line"><span class="keyword">let</span> ranking = pac10teamRankings[<span class="string">"Ohio"</span>] <span class="comment">// ranking would be nil</span></div><div class="line"></div><div class="line"><span class="comment">// use a tuple with for enumerate a dictionary</span></div><div class="line"> <span class="keyword">for</span> (key,value) <span class="keyword">in</span> pac10teamRankings&#123;</div><div class="line">   <span class="built_in">print</span>(<span class="string">"<span class="subst">\(key)</span> = <span class="subst">\(value)</span>"</span>)</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Range</span>&lt;<span class="title">T</span>&gt;</span>&#123;</div><div class="line">  <span class="keyword">var</span> startIndex: <span class="type">T</span></div><div class="line">  <span class="keyword">var</span> endIndex: <span class="type">T</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> array = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>,<span class="string">"d"</span>]</div><div class="line"><span class="keyword">let</span> subArray1 = array[<span class="number">2</span>...<span class="number">3</span>]<span class="comment">//["c","d"]</span></div><div class="line"><span class="keyword">let</span> subArray2 = array[<span class="number">2</span>..&lt;<span class="number">3</span>]<span class="comment">//["c"]</span></div></pre></td></tr></table></figure>
-<h2 id="Other-Class"><a href="#Other-Class" class="headerlink" title="Other Class"></a>Other Class</h2><ol>
-<li>NSObject: It is base class for all Objective-C classes</li>
-<li>NSNumber: 装数字的类，可用来强制类型转换</li>
-<li>NSDate：用来找出现在的日期和时间或者储存过去或者未来的日期</li>
-<li>NSDATA：处理原始数据</li>
+        <h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><h3 id="String-methods"><a href="#String-methods" class="headerlink" title="String methods"></a>String methods</h3><ol>
+<li><p>In Unicode, a given glyph might be represented by multiple Unicode characters, As a result, we can’t index a String by int</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="string">"hello"</span></div><div class="line"><span class="keyword">let</span> index = <span class="built_in">advance</span>(s.startIndex,<span class="number">2</span>) <span class="comment">// index is a String.Index to the 3rd glyph "l"</span></div><div class="line"></div><div class="line">s.splice(<span class="string">"abc"</span>,index) <span class="comment">// s will be "heabcllo"</span></div><div class="line"><span class="keyword">let</span> startIndex = <span class="built_in">advance</span>(s.startIndex,<span class="number">1</span>)</div><div class="line"><span class="keyword">let</span> endIndex = <span class="built_in">advance</span>(s.startIndex,<span class="number">6</span>);</div><div class="line"><span class="keyword">let</span> substring = s[index..&lt;endIndex]</div></pre></td></tr></table></figure>
+</li>
+<li><p>rangeOfString returns an Optional Range<string.index></string.index></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> num = <span class="string">"56,23"</span></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> decimalRange = num.rangeOfString(<span class="string">"."</span>)&#123;</div><div class="line">  <span class="keyword">let</span> wholeNumberPart = num[startIndex,,&lt;decimalRange.startIndex]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>String方法很多：endIndex, hasSuffix(String)-&gt;bool, toInt(), join等等</p>
+</li>
 </ol>
-<h2 id="Swift中的数据结构"><a href="#Swift中的数据结构" class="headerlink" title="Swift中的数据结构"></a>Swift中的数据结构</h2><p>swift中有三种数据结构：class, struct and enum</p>
-<p>相似点：</p>
-<ol>
-<li>声明的形式</li>
-<li>属性和方法</li>
-<li>class和struct初始化相似</li>
-</ol>
-<p>不同点：</p>
-<ol>
-<li>class是三种唯一有继承性的</li>
-<li>introspection and casting also class only</li>
-<li>值类型和引用类型。struct和enum储存的是拷贝过的值，而class是引用类型，传递的是对象的指针，值一直在堆内存中，堆内存中的值系统会自动管理</li>
-</ol>
-<h2 id="value-vs-Reference"><a href="#value-vs-Reference" class="headerlink" title="value vs Reference"></a>value vs Reference</h2><ol>
-<li>value值在struct和enum中当你将它传递给方法时，方法使用的是它的拷贝，当你赋值给他时也是一样。所以在定义struct和enum时，如果添加方法修改它的状态，必须在方法前面加上mutating关键词</li>
-<li>Reference储存在堆中，即使是常量指针，同样可以向这个常量指针发送消息，来修改对象里的属性</li>
-</ol>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
-<li>可以加override来重写父类方法</li>
-<li>用final来标记不可重写的func</li>
-</ol>
+<h2 id="type-conversion"><a href="#type-conversion" class="headerlink" title="type conversion"></a>type conversion</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> d: <span class="type">Double</span> = <span class="number">37.5</span></div><div class="line"><span class="keyword">let</span> f: <span class="type">Float</span> = <span class="number">37.5</span></div><div class="line"><span class="keyword">let</span> x = <span class="type">Int</span>(d)</div><div class="line"><span class="keyword">let</span> xd = <span class="type">Double</span>(x)</div><div class="line"></div><div class="line"><span class="keyword">let</span> a = <span class="type">Array</span>(<span class="string">"abc"</span>)  <span class="comment">//a = ["a","b","c"]</span></div><div class="line"><span class="keyword">let</span> b = <span class="type">String</span>([<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>]) <span class="comment">// b = "abc"</span></div></pre></td></tr></table></figure>
+<h2 id="Other-Functions"><a href="#Other-Functions" class="headerlink" title="Other Functions"></a>Other Functions</h2><p>Collections: Array, Dictionary, String<br>Sliceables: Array and String</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="built_in">count</span> = <span class="built_in">countElements</span>(a <span class="type">Collection</span>)   <span class="comment">//how many elements in Collection</span></div><div class="line"><span class="keyword">let</span> sub = <span class="built_in">dropFirst</span>(a <span class="type">Sliceable</span>)          <span class="comment">//drop the first thing in Sliceable</span></div><div class="line"><span class="keyword">let</span> sub = <span class="built_in">dropLast</span>(a <span class="type">Sliceable</span>)           <span class="comment">//drop the last thing in Sliceable</span></div><div class="line"><span class="keyword">let</span> first = first(a <span class="type">Sliceable</span>)            <span class="comment">//the first element</span></div><div class="line"><span class="keyword">let</span> last = last(a <span class="type">Sliceable</span>)</div><div class="line"><span class="keyword">let</span> <span class="keyword">prefix</span> = <span class="keyword">prefix</span>(a <span class="type">Sliceable</span>, <span class="type">X</span>: <span class="type">Int</span>)  <span class="comment">//return the first X thing</span></div><div class="line"><span class="keyword">let</span> suffix = suffix(a <span class="type">Sliceable</span>, <span class="type">X</span>: <span class="type">Int</span>)  <span class="comment">//return the last X</span></div><div class="line"><span class="keyword">let</span> reversed: <span class="type">Array</span> = reversed(a <span class="type">Collection</span>)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -411,8 +398,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/17/deep_learning_day1/" rel="next" title="machine learning">
-                <i class="fa fa-chevron-left"></i> machine learning
+              <a href="/2016/12/23/swift_day5/" rel="next" title="ios入门--calculator（五）">
+                <i class="fa fa-chevron-left"></i> ios入门--calculator（五）
               </a>
             
           </div>
@@ -420,10 +407,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/23/swift_day5/" rel="prev" title="ios入门--calculator（五）">
-                ios入门--calculator（五） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -536,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#optional-is-just-an-enum"><span class="nav-number">1.</span> <span class="nav-text">optional is just an enum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">2.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dictionary"><span class="nav-number">3.</span> <span class="nav-text">dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range"><span class="nav-number">4.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Class"><span class="nav-number">5.</span> <span class="nav-text">Other Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift中的数据结构"><span class="nav-number">6.</span> <span class="nav-text">Swift中的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#value-vs-Reference"><span class="nav-number">7.</span> <span class="nav-text">value vs Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">8.</span> <span class="nav-text">Methods</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions"><span class="nav-number">1.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-methods"><span class="nav-number">1.1.</span> <span class="nav-text">String methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#type-conversion"><span class="nav-number">2.</span> <span class="nav-text">type conversion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Functions"><span class="nav-number">3.</span> <span class="nav-text">Other Functions</span></a></li></ol></div>
             
 
           </div>
