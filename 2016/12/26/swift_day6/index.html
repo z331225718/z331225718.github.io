@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ios,calculator," />
+  <meta name="keywords" content="ios," />
 
 
 
@@ -84,22 +84,40 @@
 
 
 
-<meta name="description" content="复制控件复制控件时若控件属性不完全一样，要将原链接去掉
-定义Array12var operandStack = Array&amp;lt;Double&amp;gt;()//定义的时候可以不指明类型，让编译器自己推断
-Computed PropertiesSwift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：123456789var displayValue: Double&amp;#1">
+<meta name="description" content="Objective-c Compatibility
+Bridging
+
+NSString is bridged to String
+NSArray is bridged to Array
+NSDictionary is bridged to Dictionary
+Int, Float, Double, bool are all bridged to NSNumber
+
+Casting to/fro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios入门--calculator（二）">
-<meta property="og:url" content="http://yoursite.com/2016/12/12/day2/index.html">
+<meta property="og:title" content="ios入门--calculator（六）">
+<meta property="og:url" content="http://yoursite.com/2016/12/26/swift_day6/index.html">
 <meta property="og:site_name" content="zzm blog">
-<meta property="og:description" content="复制控件复制控件时若控件属性不完全一样，要将原链接去掉
-定义Array12var operandStack = Array&amp;lt;Double&amp;gt;()//定义的时候可以不指明类型，让编译器自己推断
-Computed PropertiesSwift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：123456789var displayValue: Double&amp;#1">
-<meta property="og:updated_time" content="2016-12-12T15:39:16.000Z">
+<meta property="og:description" content="Objective-c Compatibility
+Bridging
+
+NSString is bridged to String
+NSArray is bridged to Array
+NSDictionary is bridged to Dictionary
+Int, Float, Double, bool are all bridged to NSNumber
+
+Casting to/fro">
+<meta property="og:updated_time" content="2016-12-26T04:30:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios入门--calculator（二）">
-<meta name="twitter:description" content="复制控件复制控件时若控件属性不完全一样，要将原链接去掉
-定义Array12var operandStack = Array&amp;lt;Double&amp;gt;()//定义的时候可以不指明类型，让编译器自己推断
-Computed PropertiesSwift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：123456789var displayValue: Double&amp;#1">
+<meta name="twitter:title" content="ios入门--calculator（六）">
+<meta name="twitter:description" content="Objective-c Compatibility
+Bridging
+
+NSString is bridged to String
+NSArray is bridged to Array
+NSDictionary is bridged to Dictionary
+Int, Float, Double, bool are all bridged to NSNumber
+
+Casting to/fro">
 
 
 
@@ -127,13 +145,13 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/12/day2/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/26/swift_day6/"/>
 
 
 
 
 
-  <title> ios入门--calculator（二） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title> ios入门--calculator（六） | zzm blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +298,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/12/day2/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/26/swift_day6/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="zhu.ming.zhou">
@@ -304,7 +322,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
             
             
               
-                ios入门--calculator（二）
+                ios入门--calculator（六）
               
             
           </h1>
@@ -317,8 +335,8 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T23:30:20+08:00">
-                2016-12-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-26T12:30:20+08:00">
+                2016-12-26
               </time>
             
 
@@ -353,16 +371,23 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
       
 
       
-        <h2 id="复制控件"><a href="#复制控件" class="headerlink" title="复制控件"></a>复制控件</h2><p>复制控件时若控件属性不完全一样，要将原链接去掉</p>
-<h2 id="定义Array"><a href="#定义Array" class="headerlink" title="定义Array"></a>定义Array</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> operandStack = <span class="type">Array</span>&lt;<span class="type">Double</span>&gt;()</div><div class="line"><span class="comment">//定义的时候可以不指明类型，让编译器自己推断</span></div></pre></td></tr></table></figure>
-<h2 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h2><p>Swift中的计算属性（get and set）目的在于取值和赋值时执行里面的代码，如：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> displayValue: <span class="type">Double</span>&#123;</div><div class="line">    <span class="keyword">get</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="type">NumberFormatter</span>().number(from: display.text!)!.doubleValue</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">set</span>&#123;</div><div class="line">        display.text = <span class="string">"<span class="subst">\(newValue)</span>"</span></div><div class="line">        userIsInTheMiddleOfTypingANumber = <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>将静态标签上显示的string转换成Double，再set回string</p>
-<h2 id="代码复用"><a href="#代码复用" class="headerlink" title="代码复用"></a>代码复用</h2><p>每一段加减乘除代码都很类似：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> operandStack.<span class="built_in">count</span>&gt;=<span class="number">2</span>&#123;</div><div class="line">    displayValue = operandStack.removeLast()+operandStack.removeLast()</div><div class="line">    enter()</div></pre></td></tr></table></figure></p>
-<p>可以将这段写成如下函数<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">performOperation</span> <span class="params">(operation: <span class="params">(Double,Double)</span></span></span> -&gt; <span class="type">Double</span>)&#123;</div><div class="line">       <span class="keyword">if</span> operandStack.<span class="built_in">count</span>&gt;=<span class="number">2</span>&#123;</div><div class="line">           displayValue = operation(operandStack.removeLast(),operandStack.removeLast())</div><div class="line">           enter()</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>此函数的参数是一个函数，它有两个double型参量，返回值是一个double型，调用此函数：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation(multiply)</div></pre></td></tr></table></figure></p>
-<p>此时还要定义加减乘除四个函数，比较繁琐，swift中允许传递一个函数而不用去定义它：<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">performOperation &#123;$<span class="number">0</span> * $<span class="number">1</span>&#125;</div></pre></td></tr></table></figure></p>
-<p>这里将函数作为参数传递，$0,$1指的是第一第二个参数。</p>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>MVC指的是Model，Controller，View。<br>Model（模型）是应用程序中用于处理应用程序数据逻辑的部分。通常模型对象负责在数据库中存取数据。<br>View（视图）是应用程序中处理数据显示的部分。通常视图是依据模型数据创建的。<br>Controller（控制器）是应用程序中处理用户交互的部分。通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+        <h2 id="Objective-c-Compatibility"><a href="#Objective-c-Compatibility" class="headerlink" title="Objective-c Compatibility"></a>Objective-c Compatibility</h2><ol>
+<li>Bridging</li>
+</ol>
+<p>NSString is bridged to String</p>
+<p>NSArray is bridged to Array<anyobject></anyobject></p>
+<p>NSDictionary is bridged to Dictionary<nsobject, anyobject=""></nsobject,></p>
+<p>Int, Float, Double, bool are all bridged to NSNumber</p>
+<ol>
+<li>Casting to/from bridged types<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> length = (aString <span class="keyword">as</span> <span class="type">NSString</span>).length</div><div class="line">(anArray <span class="keyword">as</span> <span class="type">NSArray</span>).componentsJoinedByString(<span class="type">NSString</span>)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Property-list"><a href="#Property-list" class="headerlink" title="Property list"></a>Property list</h2><ol>
+<li>Property List 用来隐式的传递数据</li>
+<li>Property List 可以用于泛型的数据结构</li>
+<li>NSUserDefaults 像一个微型的数据库，只会储存Property List<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> defaults = <span class="type">NSUserDefaults</span>.standardUserDefaults()</div><div class="line"></div><div class="line"><span class="keyword">let</span>  plist: <span class="type">AnyObject</span> = defaults.objectForKey(<span class="type">String</span>)</div><div class="line">defaults.setObject(<span class="type">AnyObject</span>, forKey: <span class="type">String</span>) <span class="comment">// AnyObject must be a property List</span></div><div class="line"></div><div class="line"><span class="comment">// your changes will be automatically saved, but you can be sure they are saved at any time by</span></div><div class="line"><span class="keyword">if</span> !defaults.synchronize()&#123;</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -388,8 +413,6 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
           
             <a href="/tags/ios/" rel="tag"># ios</a>
           
-            <a href="/tags/calculator/" rel="tag"># calculator</a>
-          
         </div>
       
 
@@ -397,8 +420,8 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/11/day1/" rel="next" title="ios入门--calculator（一）">
-                <i class="fa fa-chevron-left"></i> ios入门--calculator（一）
+              <a href="/2016/12/23/swift_day5/" rel="next" title="ios入门--calculator（五）">
+                <i class="fa fa-chevron-left"></i> ios入门--calculator（五）
               </a>
             
           </div>
@@ -407,8 +430,8 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/12/14/day3/" rel="prev" title="ios入门--calculator（三）">
-                ios入门--calculator（三） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/03/html_day1/" rel="prev" title="HTML入门">
+                HTML入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -522,7 +545,7 @@ Computed PropertiesSwift中的计算属性（get and set）目的在于取值和
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复制控件"><span class="nav-number">1.</span> <span class="nav-text">复制控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义Array"><span class="nav-number">2.</span> <span class="nav-text">定义Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Computed-Properties"><span class="nav-number">3.</span> <span class="nav-text">Computed Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码复用"><span class="nav-number">4.</span> <span class="nav-text">代码复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">5.</span> <span class="nav-text">MVC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-c-Compatibility"><span class="nav-number">1.</span> <span class="nav-text">Objective-c Compatibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Property-list"><span class="nav-number">2.</span> <span class="nav-text">Property list</span></a></li></ol></div>
             
 
           </div>
